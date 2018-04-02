@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'pages/index'
+
+  get 'pages/about'
+
+  get 'pages/contact'
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get 'products/index'
 
   devise_for :users, controllers: {
